@@ -18,7 +18,7 @@ mybatis:
 tencent:
   cos:
     secretId:
-    secretKey: 
+    secretKey:
     buckerName: test-1314885658
     region: ap-chengdu
     url: test-1314885658.cos.ap-chengdu.myqcloud.com
