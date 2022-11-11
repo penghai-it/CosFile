@@ -17,8 +17,8 @@ mybatis:
 
 tencent:
   cos:
-    secretId: AKIDRo6GUkz8DAA82lMo9NSM3Wq3JRN9MK3Y
-    secretKey: OejbGk29LzVpw22saG2ridVAfCf3GPRM
+    secretId:
+    secretKey: 
     buckerName: test-1314885658
     region: ap-chengdu
     url: test-1314885658.cos.ap-chengdu.myqcloud.com
