@@ -1,0 +1,26 @@
+server:
+  port: 8081
+# mysql??
+spring:
+  datasource:
+    url: mysql://49.233.52.137:3306/test?serverTimezone=GMT%2B8
+    username: root
+    password: Temp123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis??
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+tencent:
+  cos:
+    secretId: 
+    secretKey: 
+    buckerName: test-1314885658
+    region: ap-chengdu
+    url: test-1314885658.cos.ap-chengdu.myqcloud.com
+
+
