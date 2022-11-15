@@ -19,7 +19,7 @@ import java.util.UUID;
 public class CosFileTestServiceImpl implements CosFileTestService {
     /**
      * 腾讯云COS对象存储测试
-     * 注意======> secretId和secretKey已经变了需要使用当前的secretId和secretKey todo
+     * 注意======> secretId和secretKey已经变了需要使用当前的secretId和secretKey
      *
      * @param file 文件对象
      * @return 文件下载地址

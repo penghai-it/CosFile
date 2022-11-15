@@ -13,8 +13,7 @@ import org.springframework.stereotype.Service;
 public class Tsss implements Testsss {
     @Override
     public void test() {
-        System.out.println(111);
-        System.out.println(222);
+
     }
 
     @Override
