@@ -120,4 +120,92 @@ public class RabbitConfig {
         return BindingBuilder.bind(topicQueueBindingSimpleMode2()).to(topicExchangeBindingSimpleMode()).with("topic.#");
     }
 
+    /**
+     * @return: org.springframework.amqp.core.Queue
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:扇形交换机队列
+     **/
+    @Bean
+    Queue fanSimpleModeQueue() {
+        return new Queue(RabbitMqConstant.FAN_BINDING_SIMPLE_MODE_QUEUE);
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.Queue
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:扇形交换机队列2
+     **/
+    @Bean
+    Queue fanSimpleModeQueue2() {
+        return new Queue(RabbitMqConstant.FAN_BINDING_SIMPLE_MODE_QUEUE2);
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.Queue
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:扇形交换机队列3
+     **/
+    @Bean
+    Queue fanSimpleModeQueue3() {
+        return new Queue(RabbitMqConstant.FAN_BINDING_SIMPLE_MODE_QUEUE3);
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.FanoutExchange
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:扇形交换机
+     **/
+    @Bean
+    FanoutExchange fanExchangeBindingSimpleMode() {
+        return new FanoutExchange(RabbitMqConstant.FAN_BINDING_SIMPLE_MODE_EXCHANGE);
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.Binding
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:就队列1绑定到扇形交换机（应为是扇形交换机_路由键无需要配置_配置了也不生效）将三个队列都绑定到一个交换机上
+     **/
+
+    @Bean
+    Binding fanBindingDirect() {
+        return BindingBuilder.bind(fanSimpleModeQueue()).to(fanExchangeBindingSimpleMode());
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.Binding
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:就队列2绑定到扇形交换机
+     **/
+    @Bean
+    Binding fanBindingDirect2() {
+        return BindingBuilder.bind(fanSimpleModeQueue2()).to(fanExchangeBindingSimpleMode());
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.Binding
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:就队列3绑定到扇形交换机
+     **/
+    @Bean
+    Binding fanBindingDirect3() {
+        return BindingBuilder.bind(fanSimpleModeQueue3()).to(fanExchangeBindingSimpleMode());
+    }
+
+    /**
+     * @return: org.springframework.amqp.core.DirectExchange
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:不绑定队列的交换机测试回调
+     **/
+    @Bean
+    DirectExchange noQueueExchange() {
+        return new DirectExchange(RabbitMqConstant.NO_QUEUE_TEST_EXCHANGE);
+    }
 }

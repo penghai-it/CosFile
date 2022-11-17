@@ -12,6 +12,10 @@ spring:
       direct:
         acknowledge-mode: none
     connection-timeout: 0
+    #确认消息已发送到交换机(Exchange)回调
+    publisher-confirm-type: correlated
+    #确认消息已发送到队列(Queue)回调
+    publisher-returns: true
   application:
     name: cosFileTest
   datasource:

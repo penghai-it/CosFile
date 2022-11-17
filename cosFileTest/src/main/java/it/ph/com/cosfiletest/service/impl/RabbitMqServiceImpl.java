@@ -17,12 +17,12 @@ public class RabbitMqServiceImpl implements RabbitMqService {
     RabbitMqProducer rabbitMqProducer;
 
     @Override
-    public void simpleMode(String msg, String key) {
+    public void simpleMode(String msg) {
         rabbitMqProducer.simpleMode(msg, "queue_simple_Mode");
     }
 
     @Override
-    public void bindingSimpleMode(String msg, String key) {
+    public void bindingSimpleMode(String msg) {
         rabbitMqProducer.bindingSimpleMode(msg, RabbitMqConstant.KEY_BINDING_SIMPLE_MODE);
     }
 
@@ -31,4 +31,18 @@ public class RabbitMqServiceImpl implements RabbitMqService {
         rabbitMqProducer.topicBindingSimpleMode(msg, key);
     }
 
+    @Override
+    public void fanBindingSimpleMode(String msg) {
+        rabbitMqProducer.fanBindingSimpleMode(msg);
+    }
+
+    @Override
+    public void noExchangeTest(String msg) {
+        rabbitMqProducer.noExchangeProducer(msg, RabbitMqConstant.KEY_BINDING_SIMPLE_MODE);
+    }
+
+    @Override
+    public void noQueueExchange(String msg) {
+        rabbitMqProducer.noQueueExchange(msg, RabbitMqConstant.KEY_BINDING_SIMPLE_MODE);
+    }
 }

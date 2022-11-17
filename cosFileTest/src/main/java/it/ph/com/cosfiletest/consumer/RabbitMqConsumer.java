@@ -34,13 +34,25 @@ public class RabbitMqConsumer {
         System.out.println("消费者1：" + msg);
     }
 
+
     @RabbitListener(queues = "queue_binding_simple_mode")
     public void bindingSimpleMode1(String msg, Message message, Channel channel) {
         System.out.println("消费者2：" + msg);
     }
 
+
     @RabbitListener(queues = "queue_binding_simple_mode")
-    public void bindingSimpleMode2(String msg, Message message, Channel channel) {
+    public void bindingSimpleMode2(String msg, Message message, Channel channel) throws Exception {
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), true);
+        int a = 0;
+        try {
+            if (a < 10) {
+                throw new RuntimeException("抛异常！");
+            }
+        } catch (Exception e) {
+            channel.basicReject(message.getMessageProperties().getDeliveryTag(), true);
+            System.out.println("消费失败了将消息放回");
+        }
         System.out.println("消费者3：" + msg);
     }
 
@@ -52,12 +64,32 @@ public class RabbitMqConsumer {
      **/
     @RabbitListener(queues = "topic.binding_simple_mode_queue")
     public void topicSimpleMode(String msg, Message message, Channel channel) {
-        System.out.println("topic消费这消费：" + msg);
+        System.out.println("topic消费者消费：" + msg);
     }
 
     @RabbitListener(queues = "topic.binding_simple_mode_queue2")
     public void topicSimpleMode2(String msg, Message message, Channel channel) {
-        System.out.println("topic2消费这消费：" + msg);
+        System.out.println("topic2消费者消费：" + msg);
     }
 
+    /**
+     * @return: void
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:扇形交换机消费者
+     **/
+    @RabbitListener(queues = "fan_binding_simple_mode_queue")
+    public void fanSimpleMode(String msg, Message message, Channel channel) {
+        System.out.println("扇形交换机，消费者1：" + msg);
+    }
+
+    @RabbitListener(queues = "fan_binding_simple_mode_queue2")
+    public void fanSimpleMode2(String msg, Message message, Channel channel) {
+        System.out.println("扇形交换机，消费者2：" + msg);
+    }
+
+    @RabbitListener(queues = "fan_binding_simple_mode_queue3")
+    public void fanSimpleMode3(String msg, Message message, Channel channel) {
+        System.out.println("扇形交换机，消费者3：" + msg);
+    }
 }

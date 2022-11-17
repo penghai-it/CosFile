@@ -55,8 +55,41 @@ public class RabbitMqProducer {
      * @描述:Topic交换机绑定
      **/
     public void topicBindingSimpleMode(String msg, String key) {
-        System.out.println(key + ",开始发送消息了");
+        System.out.println("开始发送消息了");
         rabbitTemplate.convertAndSend(RabbitMqConstant.TOPIC_BINDING_SIMPLE_MODE_EXCHANGE, key, msg, message -> {
+            message.getMessageProperties().setMessageId(String.valueOf(UUID.randomUUID()));
+            return message;
+        });
+    }
+
+
+    public void fanBindingSimpleMode(String msg) {
+        System.out.println("扇形交换机开始发送消息了");
+        rabbitTemplate.convertAndSend(RabbitMqConstant.FAN_BINDING_SIMPLE_MODE_EXCHANGE, null, msg, message -> {
+            message.getMessageProperties().setMessageId(String.valueOf(UUID.randomUUID()));
+            return message;
+        });
+    }
+
+    /**
+     * @param msg 消息
+     * @param key 队列key
+     * @return: void
+     * @创建者: PH
+     * @时间: 2022/11/17
+     * @描述:消息推送到server_但是在server里找不到交换机(交换机不存在测试回调)
+     **/
+    public void noExchangeProducer(String msg, String key) {
+        System.out.println("交换机不存在时发送消息,测试回调!!");
+        rabbitTemplate.convertAndSend("non-existent-exchange", key, msg, message -> {
+            message.getMessageProperties().setMessageId(String.valueOf(UUID.randomUUID()));
+            return message;
+        });
+    }
+
+    public void noQueueExchange(String msg, String key) {
+        System.out.println("交换机存但未绑定队列,测试回调!!");
+        rabbitTemplate.convertAndSend(RabbitMqConstant.NO_QUEUE_TEST_EXCHANGE, key, msg, message -> {
             message.getMessageProperties().setMessageId(String.valueOf(UUID.randomUUID()));
             return message;
         });
