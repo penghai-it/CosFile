@@ -15,6 +15,11 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author PH
+ * @时间: 2022/11/22
+ * @描述:腾讯云COS对象存储练习Model
+ **/
 @Service
 public class CosFileTestServiceImpl implements CosFileTestService {
     /**
