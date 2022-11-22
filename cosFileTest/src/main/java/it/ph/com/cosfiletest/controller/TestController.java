@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author PH
  * @时间： 2022/6/30
- * @描述：
+ * @描述：MyBatis注解式SQL测试Controller
  */
 @RestController
 @RequestMapping("/api")

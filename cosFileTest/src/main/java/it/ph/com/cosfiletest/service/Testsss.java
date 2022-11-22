@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Insert;
 /**
  * @author PH
  * @时间： 2022/6/30
- * @描述：
+ * @描述：使用MyBatis测试注解式SQL
  */
 public interface Testsss {
 
