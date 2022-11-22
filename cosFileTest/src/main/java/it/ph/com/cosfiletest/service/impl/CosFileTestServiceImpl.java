@@ -65,9 +65,9 @@ public class CosFileTestServiceImpl implements CosFileTestService {
         // 2 设置 bucket 的区域, COS 地域的简称请参照
         Region region = new Region(ConstantCosConfig.REGION);
         ClientConfig clientConfig = new ClientConfig(region);
-        // 从 5.6.54 版本开始，默认使用了 https
-//        clientConfig.setHttpProtocol(HttpProtocol.https);
-        // 3 生成 cos 客户端。
+        //从 5.6.54 版本开始，默认使用了 https
+        // clientConfig.setHttpProtocol(HttpProtocol.https);
+        //生成 cos 客户端。
         return new COSClient(credentials, clientConfig);
     }
 
@@ -99,8 +99,9 @@ public class CosFileTestServiceImpl implements CosFileTestService {
                 file.mkdirs();
             }
             File downFile = new File(file + "/" + fileName);
-            ObjectMetadata object = cosClient.getObject(getObjectRequest, downFile);
-            String crc64Ecma = object.getCrc64Ecma();
+            //下载文件到指定文件夹
+            cosClient.getObject(getObjectRequest, downFile);
+
         }
     }
 
