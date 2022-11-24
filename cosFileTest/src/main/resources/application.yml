@@ -1,6 +1,5 @@
 server:
   port: 8081
-# mysql??
 spring:
   rabbitmq:
     host: 49.233.52.137
@@ -19,16 +18,37 @@ spring:
   application:
     name: cosFileTest
   datasource:
-    url: mysql://49.233.52.137:3306/test?serverTimezone=GMT%2B8
-    username: root
-    password: Temp123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    dynamic:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      strict: false  #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      datasource:
+        master:
+          url: jdbc:mysql://49.233.52.137:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone =Asia/Shanghai
+          username: root
+          password: 123456
+        slave_1:
+          url: jdbc:mysql://49.233.52.137:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone =Asia/Shanghai
+          username: root
+          password: 123456
+      hikari:
+        max-lifetime: 1800000
+        connection-timeout: 5000
+        idle-timeout: 3600000
+        max-pool-size: 12
+        min-idle: 4
+        connection-test-query: /**ping*/
+  redis:
+    port: 6379
+    host: 49.233.52.137
+    password: 123456
+    connect-timeout: 50000
 # mybatis??
-mybatis:
+mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.example.demo.entity
+  type-aliases-package: it.ph.com.cosfiletest
   configuration:
     map-underscore-to-camel-case: true
+
 #COS对象存储参数配置
 tencent:
   cos:
