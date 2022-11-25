@@ -2,7 +2,6 @@ package it.ph.com.cosfiletest.controller;
 
 import it.ph.com.cosfiletest.mode.BalanceMode;
 import it.ph.com.cosfiletest.service.MyBatisAndThreadService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,6 +54,7 @@ public class MyBatisAndThreadController {
 
     /**
      * @param quantity 领取数量
+     *@param id 优惠卷id
      * @return: java.lang.String
      * @创建者: PH
      * @时间: 2022/11/23
