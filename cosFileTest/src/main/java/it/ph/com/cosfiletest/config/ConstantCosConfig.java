@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author 小海
  * @时间: 2022/11/23
- * @描述:配置文件属性
+ * @描述: 配置文件属性
  **/
 
 @Component

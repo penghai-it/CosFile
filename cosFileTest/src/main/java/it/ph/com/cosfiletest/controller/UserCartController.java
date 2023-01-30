@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：用户购物车接口层
+ * @描述： 用户购物车接口层
  */
 @RestController
 @RequestMapping("cart")
@@ -28,7 +28,7 @@ public class UserCartController {
      * @return: it.ph.com.cosfiletest.mode.Cart
      * @创建者: PH
      * @时间: 2022/11/28
-     * @描述:普通用户购物车处理过接口
+     * @描述: 普通用户购物车处理过接口
      **/
     @PostMapping("/normalUserCart")
     public Cart normalUserCart(@RequestBody NormalUserCartVo normalUserCartVo) {

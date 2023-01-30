@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：员工类
+ * @描述： 员工类
  */
 @Data
 public class Person {

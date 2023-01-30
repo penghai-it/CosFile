@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * @author PH
  * @时间： 2022/11/17
- * @描述：；类型转换工具类
+ * @描述： 类型转换工具类
  */
 public class TypeConversionUtils {
     public static Map<String, String> objectTurnMap(Object object) {

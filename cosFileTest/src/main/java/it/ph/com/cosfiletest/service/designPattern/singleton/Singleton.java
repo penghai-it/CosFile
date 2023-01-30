@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @author PH
  * @时间： 2023/1/29
- * @描述：设计模式学习_单列模式之单例模式
+ * @描述： 设计模式学习_单列模式之单例模式
  */
 @Data
 public class Singleton {

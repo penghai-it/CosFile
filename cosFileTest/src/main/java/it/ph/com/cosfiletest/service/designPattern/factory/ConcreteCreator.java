@@ -5,7 +5,7 @@ import it.ph.com.cosfiletest.mode.UserTest;
 /**
  * @author PH
  * @时间： 2023/1/30
- * @描述：具体的工厂类（具体如何如何生产一个产品对象，是由具体的工厂类实现）
+ * @描述： 具体的工厂类（具体如何如何生产一个产品对象，是由具体的工厂类实现）
  */
 public class ConcreteCreator extends Creator {
     @Override

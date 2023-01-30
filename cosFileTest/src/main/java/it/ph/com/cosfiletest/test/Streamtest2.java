@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：；流__练习
+ * @描述： 流__练习
  */
 public class Streamtest2 {
 

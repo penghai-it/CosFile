@@ -5,7 +5,7 @@ import it.ph.com.cosfiletest.mode.UserTest;
 /**
  * @author PH
  * @时间： 2023/1/30
- * @描述：工厂方法模式
+ * @描述： 工厂方法模式
  */
 public abstract class Product {
     /**
@@ -18,7 +18,7 @@ public abstract class Product {
 
     /**
      * @param userTest 参数
-     * @描述:抽象方法
+     * @描述: 抽象方法
      **/
     public abstract void model2(UserTest userTest);
 }

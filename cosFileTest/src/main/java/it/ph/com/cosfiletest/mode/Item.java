@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：购物车中的商品
+ * @描述： 购物车中的商品
  */
 @Data
 @TableName(value = "item")

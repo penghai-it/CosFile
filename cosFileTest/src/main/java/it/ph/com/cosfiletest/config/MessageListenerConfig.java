@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author PH
  * @时间： 2022/11/17
- * @描述：消费者消息确认(ACK)配置类
+ * @描述： 消费者消息确认(ACK)配置类
  */
 @Configuration
 public class MessageListenerConfig {
@@ -20,7 +20,7 @@ public class MessageListenerConfig {
     /**
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:消息接收处理类
+     * @描述: 消息接收处理类
      **/
     @Autowired
     RabbitMqReceiver rabbitMqReceiver;

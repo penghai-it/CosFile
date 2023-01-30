@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：购物车
+ * @描述： 购物车
  */
 @Data
 @TableName(value = "cart")

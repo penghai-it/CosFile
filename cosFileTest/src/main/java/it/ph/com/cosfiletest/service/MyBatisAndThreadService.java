@@ -7,13 +7,13 @@ import java.util.List;
 /**
  * @author PH
  * @时间： 2022/11/23
- * @描述：测试多线程锁
+ * @描述： 测试多线程锁
  */
 public interface MyBatisAndThreadService {
     /**
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:插入数据到优惠卷表
+     * @描述: 插入数据到优惠卷表
      **/
     int insert(BalanceMode balanceMode);
 
@@ -21,7 +21,7 @@ public interface MyBatisAndThreadService {
      * @return: java.util.List<it.ph.com.cosfiletest.mode.BalanceMode>
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:查询优惠卷数据列表
+     * @描述: 查询优惠卷数据列表
      **/
     List<BalanceMode> select();
 
@@ -30,7 +30,7 @@ public interface MyBatisAndThreadService {
      * @return: java.lang.Integer
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:更新优惠卷数据
+     * @描述: 更新优惠卷数据
      **/
     Integer update(BalanceMode balanceMode);
 
@@ -40,7 +40,7 @@ public interface MyBatisAndThreadService {
      * @return: java.lang.String
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:领取优惠卷
+     * @描述: 领取优惠卷
      **/
     String collarRollServicer(int quantity, int id);
 }

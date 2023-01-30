@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * @author PH
  * @时间： 2022/11/15
- * @描述：RabbitMq生产者
+ * @描述： RabbitMq生产者
  */
 @Component
 public class RabbitMqProducer {
@@ -23,7 +23,7 @@ public class RabbitMqProducer {
      * @param key 队列key
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式消息发送给指定消费这消费
+     * @描述: 单列模式消息发送给指定消费这消费
      **/
     public void simpleMode(String msg, String key) {
         System.out.println("开始发送消息");
@@ -36,7 +36,7 @@ public class RabbitMqProducer {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式消息发送给指定消费这消费(绑定交换机)
+     * @描述: 单列模式消息发送给指定消费这消费(绑定交换机)
      **/
     public void bindingSimpleMode(String msg, String key) {
         System.out.println("绑定交换机,开始发送消息了");
@@ -52,7 +52,7 @@ public class RabbitMqProducer {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:Topic交换机绑定
+     * @描述: Topic交换机绑定
      **/
     public void topicBindingSimpleMode(String msg, String key) {
         System.out.println("开始发送消息了");
@@ -77,7 +77,7 @@ public class RabbitMqProducer {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:消息推送到server_但是在server里找不到交换机(交换机不存在测试回调)
+     * @描述: 消息推送到server_但是在server里找不到交换机(交换机不存在测试回调)
      **/
     public void noExchangeProducer(String msg, String key) {
         System.out.println("交换机不存在时发送消息,测试回调!!");

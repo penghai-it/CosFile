@@ -5,7 +5,7 @@ import it.ph.com.cosfiletest.mode.UserTest;
 /**
  * @author PH
  * @时间： 2023/1/30
- * @描述：具体的产品类
+ * @描述： 具体的产品类
  */
 public class ConcreteCreator2 extends Product {
     @Override

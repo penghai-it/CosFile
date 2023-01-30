@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author PH
  * @时间： 2022/11/17
- * @描述：RabbitMQ消息发送和消息消费的回调配置
+ * @描述： RabbitMQ消息发送和消息消费的回调配置
  */
 @Configuration
 public class RabbitMQCallbackConfig {

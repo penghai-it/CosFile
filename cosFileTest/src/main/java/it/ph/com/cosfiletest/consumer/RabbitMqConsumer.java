@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 /**
  * @author PH
  * @时间： 2022/11/15
- * @描述：RabbitMq消费者
+ * @描述： RabbitMq消费者
  */
 @Component
 public class RabbitMqConsumer {
     /**
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式消费者
+     * @描述: 单列模式消费者
      * @RabbitListener 指定消费的队列
      **/
     @RabbitListener(queues = "queue_simple_Mode")
@@ -26,7 +26,7 @@ public class RabbitMqConsumer {
     /**
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式消费者(绑定交换机)
+     * @描述: 单列模式消费者(绑定交换机)
      * @RabbitListener 指定消费的队列
      **/
     @RabbitListener(queues = "queue_binding_simple_mode")
@@ -59,7 +59,7 @@ public class RabbitMqConsumer {
     /**
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:Topic交换机绑定消费
+     * @描述: Topic交换机绑定消费
      * @RabbitListener 指定消费的队列
      **/
     @RabbitListener(queues = "topic.binding_simple_mode_queue")
@@ -76,7 +76,7 @@ public class RabbitMqConsumer {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:扇形交换机消费者
+     * @描述: 扇形交换机消费者
      **/
     @RabbitListener(queues = "fan_binding_simple_mode_queue")
     public void fanSimpleMode(String msg, Message message, Channel channel) {

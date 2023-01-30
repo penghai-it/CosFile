@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * @author PH
  * @时间： 2022/11/23
- * @描述：领取表Mode
+ * @描述： 领取表Mode
  */
 @Data
 @TableName(value = "test_receive")

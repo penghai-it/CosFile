@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：普通用户购物车处理
+ * @描述： 普通用户购物车处理
  */
 public interface UserCartService {
     /**
@@ -16,7 +16,7 @@ public interface UserCartService {
      * @return: it.ph.com.cosfiletest.mode.Cart
      * @创建者: PH
      * @时间: 2022/11/28
-     * @描述:普通用户购物车处理过程
+     * @描述: 普通用户购物车处理过程
      **/
     Cart normalUserCart(long userId, Map<Long, Integer> items);
 }

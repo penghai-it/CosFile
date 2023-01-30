@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * @author PH
  * @时间: 2022/11/22
- * @描述:腾讯云COS对象存储测试Controller
+ * @描述: 腾讯云COS对象存储测试Controller
  **/
 
 @RestController

@@ -10,7 +10,7 @@ import static it.ph.com.cosfiletest.constant.RabbitMqConstant.KEY_BINDING_SIMPLE
 /**
  * @author PH
  * @时间： 2022/11/15
- * @描述：RabbitMQ配置类
+ * @描述： RabbitMQ配置类
  */
 @Configuration
 public class RabbitConfig {
@@ -18,7 +18,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Queue
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式队列
+     * @描述: 单列模式队列
      **/
 
     @Bean
@@ -30,7 +30,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Queue
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:创建队列
+     * @描述: 创建队列
      **/
     @Bean
     public Queue queueBindingSimpleMode() {
@@ -46,7 +46,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.DirectExchange
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:创建交换机
+     * @描述: 创建交换机
      **/
     @Bean
     DirectExchange exchangeBindingSimpleMode() {
@@ -58,7 +58,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Binding
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:绑定将队列和交换机绑定并设置用于匹配键：RabbitMqConstant.KEY_BINDING_SIMPLE_MODE
+     * @描述: 绑定将队列和交换机绑定并设置用于匹配键：RabbitMqConstant.KEY_BINDING_SIMPLE_MODE
      **/
     @Bean
     Binding bindingDirect() {
@@ -69,7 +69,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Queue
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:Topic交换机绑定
+     * @描述: Topic交换机绑定
      **/
     @Bean
     public Queue topicQueueBindingSimpleMode() {
@@ -90,7 +90,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.DirectExchange
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:创建交换机(Topic交换机)
+     * @描述: 创建交换机(Topic交换机)
      **/
     @Bean
     TopicExchange topicExchangeBindingSimpleMode() {
@@ -102,7 +102,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Binding
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:将topicQueueBindingSimpleMode()和topicExchangeBindingSimpleMode()绑定_而且绑定的键值为_RabbitMqConstant.TOPIC_BINDING_SIMPLE_MODE_QUEUE_这样只要是消息携带的路由键是topic.man才会分发到该队列
+     * @描述: 将topicQueueBindingSimpleMode()和topicExchangeBindingSimpleMode()绑定_而且绑定的键值为_RabbitMqConstant.TOPIC_BINDING_SIMPLE_MODE_QUEUE_这样只要是消息携带的路由键是topic.man才会分发到该队列
      **/
     @Bean
     Binding topicBindingDirect() {
@@ -113,7 +113,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Binding
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:将topicQueueBindingSimpleMode2()和topicExchangeBindingSimpleMode()绑定而且_绑定的键值为用上通配路由键规则topic.#_这样只要是消息携带的路由键是以topic.开头都会分发到该队列
+     * @描述: 将topicQueueBindingSimpleMode2()和topicExchangeBindingSimpleMode()绑定而且_绑定的键值为用上通配路由键规则topic.#_这样只要是消息携带的路由键是以topic.开头都会分发到该队列
      **/
     @Bean
     Binding topicBindingDirect2() {
@@ -124,7 +124,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Queue
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:扇形交换机队列
+     * @描述: 扇形交换机队列
      **/
     @Bean
     Queue fanSimpleModeQueue() {
@@ -135,7 +135,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Queue
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:扇形交换机队列2
+     * @描述: 扇形交换机队列2
      **/
     @Bean
     Queue fanSimpleModeQueue2() {
@@ -146,7 +146,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Queue
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:扇形交换机队列3
+     * @描述: 扇形交换机队列3
      **/
     @Bean
     Queue fanSimpleModeQueue3() {
@@ -157,7 +157,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.FanoutExchange
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:扇形交换机
+     * @描述: 扇形交换机
      **/
     @Bean
     FanoutExchange fanExchangeBindingSimpleMode() {
@@ -168,7 +168,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Binding
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:就队列1绑定到扇形交换机（应为是扇形交换机_路由键无需要配置_配置了也不生效）将三个队列都绑定到一个交换机上
+     * @描述: 就队列1绑定到扇形交换机（应为是扇形交换机_路由键无需要配置_配置了也不生效）将三个队列都绑定到一个交换机上
      **/
 
     @Bean
@@ -180,7 +180,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Binding
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:就队列2绑定到扇形交换机
+     * @描述: 就队列2绑定到扇形交换机
      **/
     @Bean
     Binding fanBindingDirect2() {
@@ -191,7 +191,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.Binding
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:就队列3绑定到扇形交换机
+     * @描述: 就队列3绑定到扇形交换机
      **/
     @Bean
     Binding fanBindingDirect3() {
@@ -202,7 +202,7 @@ public class RabbitConfig {
      * @return: org.springframework.amqp.core.DirectExchange
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:不绑定队列的交换机测试回调
+     * @描述: 不绑定队列的交换机测试回调
      **/
     @Bean
     DirectExchange noQueueExchange() {

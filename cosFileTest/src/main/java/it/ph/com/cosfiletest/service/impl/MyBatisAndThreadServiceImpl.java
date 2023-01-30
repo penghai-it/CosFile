@@ -18,7 +18,7 @@ import java.util.UUID;
 /**
  * @author PH
  * @时间： 2022/11/23
- * @描述：多线程（锁）测试实现类
+ * @描述： 多线程（锁）测试实现类
  */
 @Service
 public class MyBatisAndThreadServiceImpl implements MyBatisAndThreadService {

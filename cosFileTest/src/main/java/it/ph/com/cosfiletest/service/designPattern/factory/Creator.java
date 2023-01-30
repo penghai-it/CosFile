@@ -3,7 +3,7 @@ package it.ph.com.cosfiletest.service.designPattern.factory;
 /**
  * @author PH
  * @时间： 2023/1/30
- * @描述：抽象工厂（负责产品对象的生产）
+ * @描述： 抽象工厂（负责产品对象的生产）
  */
 public abstract class Creator {
     /**

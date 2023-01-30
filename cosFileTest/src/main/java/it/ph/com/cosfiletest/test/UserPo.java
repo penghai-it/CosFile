@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * @author PH
  * @时间： 2022/11/24
- * @描述：用户PO
+ * @描述： 用户PO
  */
 @Data
 @AllArgsConstructor

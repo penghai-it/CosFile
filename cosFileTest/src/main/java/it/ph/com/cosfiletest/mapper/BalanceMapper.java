@@ -20,16 +20,16 @@ public interface BalanceMapper extends BaseMapper<BalanceMode> {
      * @return: java.lang.Integer
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:插入数据到优惠卷表
+     * @描述: 插入数据到优惠卷表
      **/
     @Insert("INSERT INTO test_balance (id,itemName,sent,surplus,total) VALUES (#{id},#{itemName},#{sent},#{surplus},#{total})")
-    int insert(BalanceMode balanceMode);
+    int insert(@Param("balanceMode") BalanceMode balanceMode);
 
     /**
      * @return: java.util.List<it.ph.com.cosfiletest.mode.BalanceMode>
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:查询优惠卷数据列表
+     * @描述: 查询优惠卷数据列表
      **/
     @Select("SELECT * FROM test_balance")
     List<BalanceMode> select();

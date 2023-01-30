@@ -9,12 +9,10 @@ import lombok.Data;
 /**
  * @author PH
  * @时间： 2022/11/23
- * @描述：优惠卷Mode
+ * @描述： 优惠卷Mode
  */
 
-/**
- * 用于标识实体类对应的表
- */
+// 用于标识实体类对应的表
 @TableName(value = "test_balance")
 @Data
 public class BalanceMode {

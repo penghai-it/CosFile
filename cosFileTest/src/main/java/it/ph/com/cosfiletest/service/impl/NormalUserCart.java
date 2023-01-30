@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * @author PH
  * @时间： 2022/12/12
- * @描述：普通用户的购物车方法实现
+ * @描述： 普通用户的购物车方法实现
  */
 @Service(value = "NormalUserCart")
 public class NormalUserCart extends AbstractCart {
@@ -18,7 +18,7 @@ public class NormalUserCart extends AbstractCart {
      * @return: void
      * @创建者: PH
      * @时间: 2022/12/12
-     * @描述:商品优惠处理逻辑
+     * @描述: 商品优惠处理逻辑
      **/
     @Override
     protected void processCouponPrice(long userId, Item item) {
@@ -31,7 +31,7 @@ public class NormalUserCart extends AbstractCart {
      * @return: void
      * @创建者: PH
      * @时间: 2022/12/12
-     * @描述:运费处理逻辑
+     * @描述: 运费处理逻辑
      **/
 
     @Override

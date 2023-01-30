@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author PH
  * @时间： 2022/11/15
- * @描述：RabbitMq业务层
+ * @描述： RabbitMq业务层
  */
 @Service
 public class RabbitMqServiceImpl implements RabbitMqService {

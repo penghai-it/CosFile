@@ -18,7 +18,7 @@ import java.util.UUID;
 /**
  * @author PH
  * @时间: 2022/11/22
- * @描述:腾讯云COS对象存储练习Model
+ * @描述: 腾讯云COS对象存储练习Model
  **/
 @Service
 public class CosFileTestServiceImpl implements CosFileTestService {
@@ -80,7 +80,7 @@ public class CosFileTestServiceImpl implements CosFileTestService {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/14
-     * @描述:腾讯云COS文件下载
+     * @描述: 腾讯云COS文件下载
      **/
 
     @Override

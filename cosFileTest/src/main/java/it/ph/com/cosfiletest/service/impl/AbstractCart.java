@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * @author PH
  * @时间： 2022/11/28
- * @描述：模板方法模式_购物车抽象实现类
+ * @描述： 模板方法模式_购物车抽象实现类
  */
 
 public abstract class AbstractCart {
@@ -21,7 +21,7 @@ public abstract class AbstractCart {
      * @return: it.ph.com.cosfiletest.mode.Cart
      * @创建者: PH
      * @时间: 2022/12/12
-     * @描述:购物车抽象实现方法
+     * @描述: 购物车抽象实现方法
      **/
 
     public Cart process(long userId, Map<Long, Integer> items) {
@@ -57,7 +57,7 @@ public abstract class AbstractCart {
      * @return: void
      * @创建者: PH
      * @时间: 2022/12/12
-     * @描述:处理商品优惠的逻辑留给子类实现
+     * @描述: 处理商品优惠的逻辑留给子类实现
      **/
 
     protected abstract void processCouponPrice(long userId, Item item);
@@ -68,7 +68,7 @@ public abstract class AbstractCart {
      * @return: void
      * @创建者: PH
      * @时间: 2022/12/12
-     * @描述:处理配送费的逻辑留给子类实现
+     * @描述: 处理配送费的逻辑留给子类实现
      **/
     protected abstract void processDeliveryPrice(long userId, Item item);
 

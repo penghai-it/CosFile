@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * @author PH
  * @时间： 2022/11/17
- * @描述：手动确认消息监听类
+ * @描述： 手动确认消息监听类
  */
 @Component
 public class RabbitMqReceiver implements ChannelAwareMessageListener {

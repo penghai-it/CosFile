@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author PH
  * @时间： 2022/11/15
- * @描述：RabbitMQ接口层
+ * @描述： RabbitMQ接口层
  */
 @RestController
 @RequestMapping("mq")
@@ -24,7 +24,7 @@ public class RabbitMqController {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式（不绑定交换机直接给队列发消息）
+     * @描述: 单列模式（不绑定交换机直接给队列发消息）
      **/
     @GetMapping("simple")
     public void simpleModeController(String msg) {
@@ -33,11 +33,10 @@ public class RabbitMqController {
 
     /**
      * @param msg 消息
-     * @param key 队列key
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:单列模式(直连型交换机_路由模式交换机发送消息给绑定的队列)
+     * @描述: 单列模式(直连型交换机_路由模式交换机发送消息给绑定的队列)
      **/
     @GetMapping("bindingSimple")
     public void bindingSimpleModeController(String msg) {
@@ -49,7 +48,7 @@ public class RabbitMqController {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/15
-     * @描述:Topic交换机绑定（主题交换机_通配符模式_交换机发送消息给绑定的队列或者是通配符匹配到的队列）
+     * @描述: Topic交换机绑定（主题交换机_通配符模式_交换机发送消息给绑定的队列或者是通配符匹配到的队列）
      **/
     @GetMapping("topicSimple")
     public void topicSimpleModeController(String msg) {
@@ -64,7 +63,7 @@ public class RabbitMqController {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:扇形交换机
+     * @描述: 扇形交换机
      **/
     @GetMapping("fanSimple")
     public void fanSimpleModeController(String msg) {
@@ -76,7 +75,7 @@ public class RabbitMqController {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:消息推送到server_但是在server里找不到交换机(交换机不存在测试回调)
+     * @描述: 消息推送到server_但是在server里找不到交换机(交换机不存在测试回调)
      **/
     @GetMapping("noExchange")
     public void noExchangeController(String msg) {
@@ -88,7 +87,7 @@ public class RabbitMqController {
      * @return: void
      * @创建者: PH
      * @时间: 2022/11/17
-     * @描述:消息推送到server_找到交换机了_但是没找到队列(交换机没有绑定队列)
+     * @描述: 消息推送到server_找到交换机了_但是没找到队列(交换机没有绑定队列)
      **/
     @GetMapping("noQueueExchange")
     public void noQueueExchangeController(String msg) {

@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /**
  * @author PH
  * @时间： 2022/11/24
- * @描述：流处理练习
+ * @描述： 流处理练习
  */
 public class Streamtest {
 
