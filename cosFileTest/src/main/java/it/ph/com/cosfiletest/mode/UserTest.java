@@ -14,4 +14,19 @@ public class UserTest {
     private Integer age;
     private Integer address;
 
+    private UserTest() {
+    }
+
+
+    private static class UserTestFactory {
+        public static UserTest userTest = new UserTest();
+    }
+
+    public static UserTest getInstance() {
+        return UserTestFactory.userTest;
+    }
+
+    public Object readResolve() {
+        return getInstance();
+    }
 }

@@ -65,4 +65,5 @@ public class RabbitMqConstant {
      * @描述:不绑定队列的交换机名
      **/
     public static final String NO_QUEUE_TEST_EXCHANGE = "no_queue_test_exchange";
+
 }
