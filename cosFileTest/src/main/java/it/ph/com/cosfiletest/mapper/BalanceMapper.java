@@ -22,7 +22,7 @@ public interface BalanceMapper extends BaseMapper<BalanceMode> {
      * @时间: 2022/11/23
      * @描述: 插入数据到优惠卷表
      **/
-    @Insert("INSERT INTO test_balance (id,itemName,sent,surplus,total) VALUES (#{id},#{itemName},#{sent},#{surplus},#{total})")
+    @Insert("INSERT INTO test_balance (id,itemName,sent,surplus,total) VALUES (#{balanceMode.id},#{balanceMode.itemName},#{balanceMode.sent},#{balanceMode.surplus},#{balanceMode.total})")
     int insert(@Param("balanceMode") BalanceMode balanceMode);
 
     /**
@@ -39,17 +39,17 @@ public interface BalanceMapper extends BaseMapper<BalanceMode> {
      * @return: java.lang.Integer
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:修改优惠卷数据
+     * @描述: 修改优惠卷数据
      **/
-    @Update("UPDATE test_balance SET itemName=#{itemName},sent=#{sent},surplus=#{surplus},total=#{total} WHERE id=#{id}")
-    Integer update(BalanceMode balanceMode);
+    @Update("UPDATE test_balance SET itemName=#{balanceMode.itemName},sent=#{balanceMode.sent},surplus=#{balanceMode.surplus},total=#{balanceMode.total} WHERE id=#{balanceMode.id}")
+    Integer update(@Param("balanceMode") BalanceMode balanceMode);
 
     /**
      * @param id 优惠卷id
      * @return: java.lang.Integer
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:获取优惠卷剩余数量
+     * @描述: 获取优惠卷剩余数量
      **/
 
     @Select("SELECT surplus FROM test_balance WHERE id=#{id}")
@@ -61,7 +61,7 @@ public interface BalanceMapper extends BaseMapper<BalanceMode> {
      * @return: int
      * @创建者: PH
      * @时间: 2022/11/23
-     * @描述:更新优惠卷剩余数量
+     * @描述: 更新优惠卷剩余数量
      **/
     @Update("update test_balance set surplus=surplus-#{quantity},sent=sent+#{quantity} WHERE id=#{id}")
     int updateSurplus(@Param("quantity") int quantity, @Param("id") int id);
