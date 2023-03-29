@@ -11,5 +11,5 @@ public abstract class Creator {
      * 通常为String Enum Class等，可以为空
      **/
 
-    public abstract <T extends Product> T concreteCreator(Class<T> c);
+    public abstract <T extends FactoryProduct> T concreteCreator(Class<T> c);
 }

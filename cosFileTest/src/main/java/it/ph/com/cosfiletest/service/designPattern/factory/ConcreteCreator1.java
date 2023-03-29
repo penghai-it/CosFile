@@ -7,7 +7,7 @@ import it.ph.com.cosfiletest.mode.UserTest;
  * @时间： 2023/1/30
  * @描述： 具体的产品类
  */
-public class ConcreteCreator1 extends Product {
+public class ConcreteCreator1 extends FactoryProduct {
 
     @Override
     public void model2(UserTest userTest) {

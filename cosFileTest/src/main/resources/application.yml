@@ -3,9 +3,9 @@ server:
 spring:
   rabbitmq:
     host: 49.233.52.137
-    port: 5673
+    port: 5672
     username: admin
-    password: admin
+    password:
     virtual-host: test
     listener:
       direct:
@@ -25,22 +25,23 @@ spring:
         master:
           url: jdbc:mysql://49.233.52.137:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone =Asia/Shanghai
           username: root
-          password: 123456
+          password:
         slave_1:
-          url: jdbc:mysql://49.233.52.137:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone =Asia/Shanghai
+          url: jdbc:mysql://49.233.52.137:3306/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone =Asia/Shanghai
           username: root
-          password: 123456
+          password:
       hikari:
         max-lifetime: 1800000
         connection-timeout: 5000
         idle-timeout: 3600000
         max-pool-size: 12
         min-idle: 4
-        connection-test-query: /**ping*/
+        #测试连接
+        connection-test-query: SELECT 1 FROM DUAL
   redis:
     port: 6379
     host: 49.233.52.137
-    password: 123456
+    password:
     connect-timeout: 50000
 # mybatis??
 mybatis-plus:
@@ -48,14 +49,16 @@ mybatis-plus:
   type-aliases-package: it.ph.com.cosfiletest
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #COS对象存储参数配置
 tencent:
   cos:
     secretId:
     secretKey:
-    buckerName: test-1314885658
+    buckerName: Test-1314885658
     region: ap-chengdu
-    url: test-1314885658.cos.ap-chengdu.myqcloud.com
-
+    url: Test-1314885658.cos.ap-chengdu.myqcloud.com
+config:
+  hostAndPort: 49.233.52.137:3306
 

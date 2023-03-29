@@ -9,10 +9,10 @@ import it.ph.com.cosfiletest.mode.UserTest;
  */
 public class ConcreteCreator extends Creator {
     @Override
-    public <T extends Product> T concreteCreator(Class<T> c) {
-        Product product = null;
+    public <T extends FactoryProduct> T concreteCreator(Class<T> c) {
+        FactoryProduct product = null;
         try {
-            product = (Product) Class.forName(c.getName()).newInstance();
+            product = (FactoryProduct) Class.forName(c.getName()).newInstance();
         } catch (Exception e) {
             //异常处理
         }

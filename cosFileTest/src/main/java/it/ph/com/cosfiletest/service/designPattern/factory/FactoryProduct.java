@@ -7,7 +7,7 @@ import it.ph.com.cosfiletest.mode.UserTest;
  * @时间： 2023/1/30
  * @描述： 工厂方法模式
  */
-public abstract class Product {
+public abstract class FactoryProduct {
     /**
      * 产品类的公共方法
      **/

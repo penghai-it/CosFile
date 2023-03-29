@@ -10,6 +10,7 @@ import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.Date;
 import java.util.List;
@@ -23,6 +24,7 @@ import java.util.UUID;
 @Service
 public class MyBatisAndThreadServiceImpl implements MyBatisAndThreadService {
     @Autowired
+
     BalanceMapper balanceMapper;
     @Autowired
     ReceiveMapper receiveMapper;
@@ -32,6 +34,8 @@ public class MyBatisAndThreadServiceImpl implements MyBatisAndThreadService {
     @Override
     public int insert(BalanceMode balanceMode) {
         balanceMode.setId(UUID.randomUUID().getLeastSignificantBits());
+        balanceMode.setItemName("热部署测试");
+        System.out.println("测试热部署");
         return balanceMapper.insert(balanceMode);
     }
 
@@ -62,11 +66,14 @@ public class MyBatisAndThreadServiceImpl implements MyBatisAndThreadService {
             //更行优惠卷数量
             balanceMapper.updateSurplus(quantity, id);
             ReceiveMode receiveMode = new ReceiveMode();
-            receiveMode.setUserName("test");
+            receiveMode.setUserName("Test");
             receiveMode.setCreationTime(new Date());
             receiveMode.setBalanceId(id);
             receiveMode.setQuantityReceived(quantity);
             receiveMapper.insert(receiveMode);
+            //手动回滚
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+
         } catch (Exception e) {
             throw new RuntimeException("系统异常,请稍后再试!");
         } finally {
